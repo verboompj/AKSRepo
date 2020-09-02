@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "dsaks-df4a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "dsaks-df4a"
+  template:
+    metadata:
+      labels:
+        app: "dsaks-df4a"
+    spec:
+      containers:
+        - name: "dsaks-df4a"
+          image: "crdynamiclog.azurecr.io/dsaks"
+          ports:
+          - containerPort: 80
